@@ -17,7 +17,7 @@ public class Main {
         map.put("Tiger", 80);
         map.put("Lion", 90);
         map.put("Bear", 100);
-        map.put("fox", 60);
+        map.put("Fox", 60);
     
         System.out.println("Enter the name of the animal:");
         String animalName = scanner.nextLine();
@@ -44,5 +44,24 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println("Error: File not found.");
         }
+
+        String mostFrequentSpecies = "";
+        String leastFrequentSpecies = "";
+        int maxCount=0;
+        int minCount = Integer.MAX_VALUE;
+
+        for (String species : map.keySet()) {
+            int count = map.get(species);
+            if (count > maxCount) {
+                maxCount = count;
+                mostFrequentSpecies = species;
+            }
+            if (count < minCount) {
+                minCount = count;
+                leastFrequentSpecies = species;
+            }
+        }
+      System.out.println("Most frequent species: " + mostFrequentSpecies + " with count: " + maxCount);
+      System.out.println("Least frequent species: " + leastFrequentSpecies + " with count: " + minCount);
     }
 }
