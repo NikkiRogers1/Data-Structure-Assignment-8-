@@ -13,11 +13,11 @@ public class Main {
 
 
     
-        map.put("Elephant", 120);
-        map.put("Tiger", 80);
-        map.put("Lion", 90);
-        map.put("Bear", 100);
-        map.put("Fox", 60);
+       // map.put("Elephant", 120);
+      //  map.put("Tiger", 80);
+       // map.put("Lion", 90);
+       // map.put("Bear", 100);
+      //  map.put("Fox", 60);
     
         System.out.println("Enter the name of the animal:");
         String animalName = scanner.nextLine();
