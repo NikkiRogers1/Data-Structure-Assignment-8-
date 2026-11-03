@@ -1,3 +1,5 @@
 # Journal
 In Phase 1, I created a program that uses a HashMap to store species names and their current population counts. I manually added five species to the map with their population counts. I also implemented a query feature that prompts the user to enter a species name, and the program tells the user whether the species is in the map and displays its population if found. A HashMap is more appropriate for this task because it allows us to look up a species by its name and retrieve its population count using a key. With an array or ArrayList, we would have to search through the elements to find the species we are looking for. A HashMap makes looking up species by name easier and more efficient.
 
+Phase 2 -
+The first time a species is sighted, it isn't in the HashMap, so the program adds it with a count of 1. For a repeat sighting, the species is already in the HashMap, so the program increases its existing count by 1. The most challenging part for me was understanding the difference between displaying an increased count and actually updating the value stored in the HashMap.

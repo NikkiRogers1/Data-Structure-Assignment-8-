@@ -1,11 +1,17 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         HashMap<String, Integer> map = new HashMap<>();
     
+        
+
+
     
         map.put("Elephant", 120);
         map.put("Tiger", 80);
@@ -22,5 +28,21 @@ public class Main {
             System.out.println("Animal not found in the map.");
         }
         scanner.close();
+
+        try{
+            Scanner fileScanner = new Scanner(new File("sightings.txt"));
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                if (map.containsKey(line)) {
+                   map.put(line, map.get(line) + 1);
+                } else {
+                    map.put(line, 1);
+                }
+            }
+            fileScanner.close();
+            System.out.println(map);
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found.");
+        }
     }
 }
